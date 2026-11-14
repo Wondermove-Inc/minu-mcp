@@ -113,3 +113,11 @@ Codex는 이 컴퓨터의 로그인 정보만 지워요. Minu 쪽 연결은 만�
 ## 도움말
 
 Minu 홈페이지: [minu.page](https://minu.page)
+
+## 만든 곳
+
+Minu는 [ClawPod](https://www.clawpod.cloud/)를 만드는 원더무브가 만들어요. ClawPod는 AI 직원으로 팀을 만들어 일을 맡기고, 결과와 근거로 확인하는 서비스예요. ClawPod로 만든 팀도 있어요.
+
+- [세일즈포스 유지보수·운영 AI 팀](https://www.clawpod.cloud/salesforce-operations): 증상 뒤의 원인을 조사하고 복구 검증까지 해요.
+- [AI 보안관제 팀](https://www.clawpod.cloud/security-operations): 이미 있는 보안 장비의 로그로 365일 24시간 관제해요.
+- [Lance 취약점 점검·모의해킹](https://www.clawpod.cloud/penetration-testing): 공격자의 관점에서 약점을 찾고 증거로 보여 줘요.

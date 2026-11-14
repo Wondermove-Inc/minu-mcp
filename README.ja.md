@@ -113,3 +113,11 @@ Codex はこのコンピューターのログイン情報だけを削除しま�
 ## ヘルプ
 
 Minu ウェブサイト: [minu.page](https://minu.page)
+
+## 提供元
+
+Minu は [ClawPod](https://www.clawpod.cloud/en/) を作っている WONDERMOVE が提供しています。ClawPod は、AI 社員でチームを作って仕事を任せ、結果と根拠で確認するサービスです。ClawPod で作ったチームもあります。リンク先は英語のページです。
+
+- [AI Salesforce 保守・運用チーム](https://www.clawpod.cloud/en/salesforce-operations): 症状の裏にある原因を調べ、復旧の検証まで行います。
+- [AI セキュリティ運用(SOC)チーム](https://www.clawpod.cloud/en/security-operations): 既存のセキュリティ機器のログを 24 時間 365 日監視します。
+- [Lance 脆弱性診断・ペネトレーションテスト](https://www.clawpod.cloud/penetration-testing)(韓国語): 攻撃者の視点で弱点を見つけ、証拠で示します。

@@ -113,3 +113,11 @@ Codex removes the sign-in from your computer only. The connection on the Minu si
 ## Help
 
 Minu website: [minu.page](https://minu.page)
+
+## Who makes Minu
+
+Minu is made by WONDERMOVE, the company behind [ClawPod](https://www.clawpod.cloud/en/). With ClawPod you build a team of AI employees, delegate the work, and review the results. These teams are built with it.
+
+- [AI Salesforce Maintenance & Operations](https://www.clawpod.cloud/en/salesforce-operations): finds the hidden cause behind a symptom and verifies the recovery.
+- [AI Security Operations (SOC) Team](https://www.clawpod.cloud/en/security-operations): watches the logs from your existing security equipment around the clock.
+- [Lance Penetration Testing](https://www.clawpod.cloud/penetration-testing) (Korean): finds weak points from an attacker's view and shows the evidence.

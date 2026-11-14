@@ -91,6 +91,8 @@ codex mcp remove minu
 
 Codex removes the sign-in from your computer only. The connection on the Minu side stays until it expires, up to 30 days after its last use.
 
+**From Minu.** To end a connection on the Minu side, open Settings in Minu on the web, go to 회의록 연결 (Minutes connections), find 연결된 AI 앱 (Connected AI apps), and press 연결 끊기 (Disconnect). This works for both clients. The section appears only when you have a connection.
+
 ## If it does not work
 
 | You see | What to do |

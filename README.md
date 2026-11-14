@@ -2,7 +2,15 @@ English | [한국어](README.ko.md) | [日本語](README.ja.md)
 
 # Minu MCP
 
-Connect your AI coding assistant to [Minu](https://minu.page) and work with your meetings by asking.
+<p align="center"><img src="assets/minu-mcp.webp" alt="A person asks an AI assistant on a laptop; a yellow connector, MCP, links it to the meeting notes stored in Minu" width="760"></p>
+
+**Ask your AI assistant about your meetings.** Connect it to [Minu](https://minu.page), the AI meeting-notes service, and it reads your meetings, transcripts and minutes where you already work.
+
+- "What did we decide in last week's meetings?"
+- "Read the minutes of my last meeting and turn the action items into a checklist."
+- "Make a Minu preset for my line of work."
+
+Your assistant can read and can create presets. It cannot edit or delete your meetings.
 
 > **Status.** Minu MCP is not open to everyone yet. If the sign-in page says it is unavailable, try again later.
 

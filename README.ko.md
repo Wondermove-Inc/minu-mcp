@@ -1,0 +1,105 @@
+[English](README.md) | 한국어 | [日本語](README.ja.md)
+
+# Minu MCP
+
+쓰고 있는 AI 코딩 도우미를 [Minu](https://minu.page)에 연결하면, 물어보는 것만으로 내 회의를 다룰 수 있어요.
+
+> **상태.** Minu MCP는 아직 모두에게 열리지 않았어요. 로그인 화면에 쓸 수 없다고 나오면 나중에 다시 해 보세요.
+
+## 할 수 있는 일
+
+연결하면 AI 도우미가 내 Minu 계정에서 다섯 가지 도구를 써요.
+
+| 도구 | 하는 일 |
+| --- | --- |
+| `list_meetings` | 내 회의를 최근 순으로 보여 줘요. 단어, 날짜, 프리셋으로 걸러 볼 수 있어요. |
+| `get_meeting` | 회의 하나의 대화 기록을 읽어요. |
+| `get_meeting_minutes` | 회의 하나의 AI 회의록을 원하는 언어로 읽어요. |
+| `list_presets` | 내 회의 프리셋을 보여 줘요. |
+| `create_preset` | 주제, 분야, 전문 용어로 회의 프리셋을 만들어요. 한 시간에 10개까지예요. |
+
+AI 도우미는 회의, 대화 기록, 회의록을 고치거나 지울 수 없어요.
+
+## 필요한 것
+
+- 유료 플랜(**Pro** 또는 **Pro Plus**)의 Minu 계정. Free 플랜이면 연결되지 않고 안내 화면이 나와요.
+- 아래 클라이언트 중 하나.
+
+| 클라이언트 | 확인한 버전 |
+| --- | --- |
+| Claude Code | 2.1.325 |
+| Codex CLI | 0.167.0 |
+
+다른 MCP 클라이언트는 아직 확인하지 않았어요.
+
+서버 주소:
+
+```
+https://api.minu.page/v1/mcp
+```
+
+## Claude Code 연결하기
+
+1. 프로젝트 폴더에서 서버를 추가해요.
+
+   ```bash
+   claude mcp add --transport http --scope project minu "https://api.minu.page/v1/mcp"
+   ```
+
+2. 그 폴더에서 `claude`를 실행하고, 새 서버를 쓸지 물으면 승인해요.
+3. `/mcp`를 입력하고 `minu`를 고른 뒤 `Authenticate`를 골라요.
+4. 브라우저에 Minu 로그인 화면이 열려요. 로그인하고, 동의 화면에서 앱 이름을 확인한 뒤 허용을 눌러요. claude.ai나 chatgpt.com 같은 앱 제작사 주소가 함께 보일 수 있어요. 정상이에요. Minu 웹에 처음 로그인할 때는 동의 화면 전에 안내 화면이 한 번 나와요. 동의하고 계속하기를 눌러요.
+5. Claude Code에 `Authentication successful. Connected to minu.`가 보여요. [써 보기](#써-보기)의 요청을 해 보세요.
+
+## Codex CLI 연결하기
+
+1. 서버를 추가해요. Codex가 로그인을 바로 시작해요.
+
+   ```bash
+   codex mcp add minu --url https://api.minu.page/v1/mcp
+   ```
+
+2. 브라우저에 Minu 로그인 화면이 열려요. 로그인하고, 동의 화면에서 앱 이름을 확인한 뒤 허용을 눌러요. claude.ai나 chatgpt.com 같은 앱 제작사 주소가 함께 보일 수 있어요. 정상이에요. Minu 웹에 처음 로그인할 때는 동의 화면 전에 안내 화면이 한 번 나와요. 동의하고 계속하기를 눌러요.
+3. Codex에 `Successfully logged in.`이 보여요. [써 보기](#써-보기)의 요청을 해 보세요.
+
+나중에 다시 로그인할 때:
+
+```bash
+codex mcp login minu
+```
+
+## 써 보기
+
+- "이번 주 Minu 회의 목록을 보여 줘."
+- "마지막 회의의 회의록을 읽고 할 일을 체크리스트로 만들어 줘."
+- "내 업무에 맞는 Minu 프리셋을 만들어 줘." AI 도우미가 먼저 분야와 용어를 물을 수 있어요. 제안한 내용을 확인하고, 클라이언트가 도구 실행을 물으면 승인해요.
+
+## 연결 끊기
+
+**Claude Code.** `/mcp`를 입력하고 `minu`를 고른 뒤 `Clear authentication`을 골라요. Minu 쪽 연결도 함께 끊겨요. 프로젝트에서 서버를 지우려면:
+
+```bash
+claude mcp remove --scope project minu
+```
+
+**Codex CLI.**
+
+```bash
+codex mcp logout minu
+codex mcp remove minu
+```
+
+Codex는 이 컴퓨터의 로그인 정보만 지워요. Minu 쪽 연결은 만료될 때까지 남아요. 마지막으로 쓴 뒤 최대 30일이에요.
+
+## 안 될 때
+
+| 보이는 것 | 할 일 |
+| --- | --- |
+| 로그인 화면에 Minu MCP를 쓸 수 없다고 나옴 | Minu MCP는 아직 모두에게 열리지 않았어요. 나중에 다시 해 보세요. |
+| 로그인 뒤 플랜 안내가 나오거나, AI 도우미가 Pro 플랜이 필요하다고 함 | Minu MCP는 유료 플랜에서 쓸 수 있어요. Minu 앱에서 업그레이드해 주세요. |
+| AI 도우미가 다시 로그인하라고 하거나 `Authentication required`라고 함 | Claude Code는 `/mcp`, `minu`, `Authenticate`. Codex CLI는 `codex mcp login minu`. 연결을 끊은 뒤에도 이렇게 나와요. |
+| `create_preset`이 거절됨 | 프리셋은 한 시간에 10개까지 만들 수 있어요. 나중에 다시 해 보세요. |
+
+## 도움말
+
+Minu 홈페이지: [minu.page](https://minu.page)

@@ -54,8 +54,10 @@ https://api.minu.page/v1/mcp
    claude mcp add --transport http --scope project minu "https://api.minu.page/v1/mcp"
    ```
 
-2. Start `claude` in that folder and approve the new server when it asks.
-3. Type `/mcp`, choose `minu`, then choose `Authenticate`.
+2. Start `claude` in that folder. Two questions appear one after the other. Pressing Enter keeps the default answer, which closes Claude Code or starts it without Minu, so use the arrow keys to pick:
+   - Asked whether you trust the folder: `Yes, I trust this folder`
+   - Asked about the new MCP server: `Use this MCP server`
+3. Type `/mcp`, choose `minu`, then choose `Authenticate`. If your browser does not open, press `c` to copy the sign-in address and paste it into your browser. Copying the address from the screen by hand can break it where the line wraps.
 4. Your browser opens the Minu sign-in page. The Minu pages are in Korean for now. Sign in, check the app name on the consent page, and press 허용 (Allow). The page may also name the app maker's site, such as claude.ai or chatgpt.com. That is expected. The first time you sign in to Minu on the web, a notice appears once before the consent page. Press 동의하고 계속하기 (Agree and continue).
 5. Claude Code shows `Authentication successful. Connected to minu.` Try a request from [Try it](#try-it).
 
@@ -67,7 +69,7 @@ https://api.minu.page/v1/mcp
    codex mcp add minu --url https://api.minu.page/v1/mcp
    ```
 
-2. Your browser opens the Minu sign-in page. The Minu pages are in Korean for now. Sign in, check the app name on the consent page, and press 허용 (Allow). The page may also name the app maker's site, such as claude.ai or chatgpt.com. That is expected. The first time you sign in to Minu on the web, a notice appears once before the consent page. Press 동의하고 계속하기 (Agree and continue).
+2. Your browser opens the Minu sign-in page. The Minu pages are in Korean for now. Sign in, check the app name on the consent page, and press 허용 (Allow). The page may also name the app maker's site, such as claude.ai or chatgpt.com. That is expected. The first time you sign in to Minu on the web, a notice appears once before the consent page. Press 동의하고 계속하기 (Agree and continue). If you press 거부 (Deny), or your plan cannot use Minu MCP, Codex opens the same page once more. Press 거부 again or close the page.
 3. Codex prints `Successfully logged in.` Try a request from [Try it](#try-it).
 
 To sign in again later:
@@ -84,7 +86,7 @@ codex mcp login minu
 
 ## Disconnect
 
-**Claude Code.** Type `/mcp`, choose `minu`, then choose `Clear authentication`. This ends the connection on the Minu side too. To remove the server from the project:
+**Claude Code.** Type `/mcp`, choose `minu`, then use the arrow keys to choose `Clear authentication` (the third item). This ends the connection on the Minu side too. To remove the server from the project:
 
 ```bash
 claude mcp remove --scope project minu
@@ -97,7 +99,7 @@ codex mcp logout minu
 codex mcp remove minu
 ```
 
-Codex removes the sign-in from your computer only. The connection on the Minu side stays until it expires, up to 30 days after its last use.
+These commands remove the sign-in from your computer only. They do not end the connection on the Minu side: it stays until it expires, up to 30 days after its last use. To end it now, also follow **From Minu** below.
 
 **From Minu.** To end a connection on the Minu side, open Settings in Minu on the web, go to 회의록 연결 (Minutes connections), find 연결된 AI 앱 (Connected AI apps), and press 연결 끊기 (Disconnect). This works for both clients. The section appears only when you have a connection.
 
@@ -107,6 +109,7 @@ Codex removes the sign-in from your computer only. The connection on the Minu si
 | --- | --- |
 | The sign-in page says Minu MCP is unavailable | Minu MCP is not open to everyone yet. Try again later. |
 | A plan notice after sign-in, or the assistant says Minu MCP needs the Pro plan | Minu MCP needs a paid plan. Upgrade in the Minu app. |
+| `OAuth error: access_denied` | You pressed 거부 (Deny), or your plan cannot use Minu MCP. To connect, sign in again and press 허용 (Allow). On the Free plan, upgrade in the Minu app first. |
 | The assistant says you need to sign in again, or `Authentication required` | Claude Code: `/mcp`, `minu`, `Authenticate`. Codex CLI: `codex mcp login minu`. This also happens after you disconnect. |
 | `create_preset` is refused | You can create up to 10 presets an hour. Try again later. |
 

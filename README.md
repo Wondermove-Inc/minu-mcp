@@ -24,13 +24,13 @@ Once connected, your assistant can use five tools on your Minu account.
 | `get_meeting` | Reads the transcript of one meeting. |
 | `get_meeting_minutes` | Reads the AI minutes of one meeting in the language you ask for. |
 | `list_presets` | Lists your meeting presets. |
-| `create_preset` | Creates a meeting preset from your topic, field and special terms. Up to 10 an hour. |
+| `create_preset` | Turns a short profile of your work into a draft of two presets, one for ordinary meetings and one for interpreted meetings. It saves only the draft you approve. Up to 10 an hour. |
 
 Your assistant cannot change or delete meetings, transcripts or minutes.
 
 ## What you need
 
-- A Minu account on a paid plan (**Pro** or **Pro Plus**). On the Free plan, Minu shows a notice instead of connecting.
+- A Minu account on a paid plan (**Pro** or **Pro Plus**). On the Free plan, Minu shows a plan notice instead of connecting. If you go back to the app from that notice, your client may only print `access_denied`. Minu also sends the reason, "Minu MCP needs a Pro or Pro Plus plan. Upgrade in the Minu app.", but not every client shows it.
 - One of the clients below.
 
 | Client | Tested version |
@@ -82,7 +82,7 @@ codex mcp login minu
 
 - "List my Minu meetings from this week."
 - "Read the minutes of my last meeting and turn the action items into a checklist."
-- "Create a Minu preset for my work." Your assistant may ask about your field and terms first. Check the values it proposes, and approve the tool if your client asks.
+- "Create a Minu preset for my work." Your assistant may ask about your field and terms first. It then shows you a draft of the two presets, one for ordinary meetings and one for interpreted meetings, and saves nothing yet. If a preset of the same name would be replaced, the draft lists it. Read the draft, say yes to save it, or tell your assistant what to change. Minu saves only what you approved. Leave out keys, e-mail addresses, phone numbers and people's names. Minu refuses the first three, and cannot detect names. Approve the tool if your client asks.
 
 ## Disconnect
 
@@ -109,9 +109,9 @@ These commands remove the sign-in from your computer only. They do not end the c
 | --- | --- |
 | The sign-in page says Minu MCP is unavailable | Minu MCP is not open to everyone yet. Try again later. |
 | A plan notice after sign-in, or the assistant says Minu MCP needs the Pro plan | Minu MCP needs a paid plan. Upgrade in the Minu app. |
-| `OAuth error: access_denied` | You pressed 거부 (Deny), or your plan cannot use Minu MCP. To connect, sign in again and press 허용 (Allow). On the Free plan, upgrade in the Minu app first. |
+| `OAuth error: access_denied` | You pressed 거부 (Deny), or your plan cannot use Minu MCP. A client that shows the reason prints "Minu MCP needs a Pro or Pro Plus plan. Upgrade in the Minu app." next to it. To connect, sign in again and press 허용 (Allow). On the Free plan, upgrade in the Minu app first. |
 | The assistant says you need to sign in again, or `Authentication required` | Claude Code: `/mcp`, `minu`, `Authenticate`. Codex CLI: `codex mcp login minu`. This also happens after you disconnect. |
-| `create_preset` is refused | You can create up to 10 presets an hour. Try again later. |
+| `create_preset` is refused | You can create up to 10 presets an hour. Try again later. It is also refused when the profile holds a key, an e-mail address or a phone number, or when it changed after you approved the draft. Remove the private part, or ask for a new draft and approve it again. |
 
 ## Help
 

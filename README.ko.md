@@ -1,4 +1,4 @@
-[English](README.md) | 한국어 | [日本語](README.ja.md)
+[English](README.md) | 한국어 | [日本語](README.ja.md) | [ไทย](README.th.md)
 
 # Minu MCP
 
